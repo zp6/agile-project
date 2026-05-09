@@ -1,0 +1,252 @@
+/* ── Step indicator ────────────────────────────── */
+.auth-steps {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 2rem;
+}
+
+.auth-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.auth-step-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.auth-step-dot svg[data-lucide] {
+  width: 14px;
+  height: 14px;
+}
+
+.auth-step span {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.auth-step.active .auth-step-dot {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.auth-step.active span {
+  color: var(--text);
+}
+
+.auth-step.done .auth-step-dot {
+  background: var(--accent2);
+  border-color: var(--accent2);
+  color: #fff;
+}
+
+.auth-step.done span {
+  color: var(--accent2);
+}
+
+.auth-step-line {
+  flex: 1;
+  height: 2px;
+  background: var(--border);
+  margin: 0 0.5rem;
+  margin-bottom: 1.35rem;
+  min-width: 40px;
+}
+
+.auth-step-line.active {
+  background: var(--accent);
+}
+
+/* ── First / last name row ─────────────────────── */
+.signup-name-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.signup-name-row .login-field {
+  margin-bottom: 0;
+}
+
+/* Second name input has no icon so no left padding needed */
+#last_name {
+  padding-left: 1rem;
+}
+
+/* ── Password strength bar ─────────────────────── */
+.pw-strength-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 0.5rem;
+}
+
+.pw-strength-bar {
+  flex: 1;
+  height: 4px;
+  background: var(--border);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.pw-strength-fill {
+  height: 100%;
+  width: 0;
+  border-radius: 99px;
+  transition: width 0.3s, background 0.3s;
+}
+
+.pw-strength-fill.weak   { background: var(--danger);  width: 33%; }
+.pw-strength-fill.fair   { background: #e0a030;         width: 66%; }
+.pw-strength-fill.strong { background: var(--accent2);  width: 100%; }
+
+.pw-strength-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  min-width: 44px;
+  color: var(--muted);
+}
+
+.pw-strength-label.weak   { color: var(--danger); }
+.pw-strength-label.fair   { color: #e0a030; }
+.pw-strength-label.strong { color: var(--accent2); }
+
+/* ── Terms checkbox ────────────────────────────── */
+.auth-terms {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 0.84rem;
+  color: var(--text);
+  cursor: pointer;
+  margin-top: 0.75rem;
+  line-height: 1.5;
+}
+
+.auth-terms input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  margin-top: 2px;
+  accent-color: var(--accent);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.auth-terms a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.auth-terms a:hover {
+  text-decoration: underline;
+}
+
+/* ── Create / Join tabs (step 2) ───────────────── */
+.action-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.1rem;
+}
+
+.action-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface2);
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.action-tab svg[data-lucide] {
+  width: 15px;
+  height: 15px;
+}
+
+.action-tab:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.action-tab.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* ── Role / rewards side-by-side row ───────────── */
+.signup-row-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.signup-row-two .login-field {
+  margin-bottom: 0;
+}
+
+/* ── Select input ──────────────────────────────── */
+.login-select {
+  appearance: none;
+  cursor: pointer;
+}
+
+/* ── Monospace input (join code) ───────────────── */
+.login-input-mono {
+  font-family: "Courier New", monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ── Demo hint ─────────────────────────────────── */
+.auth-join-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding: 0.65rem 1rem;
+  background: rgba(193, 127, 90, 0.08);
+  border: 1px solid rgba(193, 127, 90, 0.2);
+  border-radius: 10px;
+  font-size: 0.82rem;
+  color: var(--text);
+}
+
+.auth-join-hint svg[data-lucide] {
+  width: 14px;
+  height: 14px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* ── Mobile tweaks ─────────────────────────────── */
+@media (max-width: 480px) {
+  .signup-name-row,
+  .signup-row-two {
+    grid-template-columns: 1fr;
+  }
+}
